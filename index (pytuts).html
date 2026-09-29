@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Python for Beginners – Simple Tutorial</title>
+<style>
+:root{--bg:#f7f8fc;--card:#fff;--text:#1f2430;--muted:#5d667a;--accent:#3776ab;--accent2:#ffd43b;--code:#14171f;--border:#e2e6ef}
+@media(prefers-color-scheme:dark){:root{--bg:#12141a;--card:#1b1f29;--text:#e8ebf2;--muted:#9aa3b8;--border:#2b3140}}
+*{box-sizing:border-box}
+body{margin:0;font-family:system-ui,-apple-system,"Segoe UI",sans-serif;background:var(--bg);color:var(--text);line-height:1.6}
+header{background:linear-gradient(120deg,var(--accent),#254e73);color:#fff;padding:36px 20px;text-align:center}
+header h1{margin:0 0 6px;font-size:2rem}
+header p{margin:0;opacity:.9}
+nav{position:sticky;top:0;background:var(--card);border-bottom:1px solid var(--border);padding:10px;display:flex;gap:8px;flex-wrap:wrap;justify-content:center;z-index:5}
+nav a{color:var(--accent);text-decoration:none;font-size:.9rem;padding:4px 10px;border-radius:99px;border:1px solid var(--border)}
+nav a:hover{background:var(--accent);color:#fff}
+main{max-width:860px;margin:0 auto;padding:20px}
+section{background:var(--card);border:1px solid var(--border);border-radius:12px;padding:20px;margin:18px 0}
+h2{margin-top:0;color:var(--accent)}
+pre{background:var(--code);color:#e6edf3;padding:14px;border-radius:8px;overflow-x:auto;margin:10px 0 6px}
+code{font-family:ui-monospace,Consolas,monospace;font-size:.92rem}
+p code{background:var(--border);padding:1px 6px;border-radius:4px}
+.btns{display:flex;gap:8px;margin-bottom:8px;flex-wrap:wrap}
+button{cursor:pointer;border:0;border-radius:6px;padding:7px 12px;font-weight:600;background:var(--accent);color:#fff}
+button.alt{background:var(--accent2);color:#222}
+.tip{border-left:4px solid var(--accent2);padding:8px 12px;background:rgba(255,212,59,.12);border-radius:0 6px 6px 0}
+iframe{border:0;width:100%;height:480px;border-radius:8px}
+footer{text-align:center;color:var(--muted);padding:24px;font-size:.85rem}
+</style>
+</head>
+<body>
+<header>
+  <h1>🐍 Python for Beginners</h1>
+  <p>Learn the basics, then run your code right on this page.</p>
+</header>
+
+<nav>
+  <a href="#l1">1. Print</a><a href="#l2">2. Variables</a><a href="#l3">3. Input</a>
+  <a href="#l4">4. If/Else</a><a href="#l5">5. Loops</a><a href="#l6">6. Functions</a><a href="#compiler">Compiler</a>
+</nav>
+
+<main>
+  <section id="l1">
+    <h2>1. Printing Output</h2>
+    <p>Use <code>print()</code> to show text on the screen. Text goes inside quotes.</p>
+    <pre><code>print("Hello, World!")
+print("I am learning Python")</code></pre>
+    <div class="btns"><button onclick="loadCode(this)">▶ Load in compiler</button><button class="alt" onclick="copyCode(this)">Copy</button></div>
+  </section>
+
+  <section id="l2">
+    <h2>2. Variables and Data Types</h2>
+    <p>A variable stores a value. Common types: <code>str</code> (text), <code>int</code> (whole number), <code>float</code> (decimal), <code>bool</code> (True/False).</p>
+    <pre><code>name = "Eljie"
+age = 20
+height = 1.65
+is_student = True
+
+print(name, age, height, is_student)
+print(type(age))</code></pre>
+    <div class="btns"><button onclick="loadCode(this)">▶ Load in compiler</button><button class="alt" onclick="copyCode(this)">Copy</button></div>
+  </section>
+
+  <section id="l3">
+    <h2>3. Getting Input</h2>
+    <p><code>input()</code> reads what the user types (always as text). Wrap it in <code>int()</code> to get a number.</p>
+    <pre><code>name = input("Your name: ")
+year = int(input("Birth year: "))
+print("Hi", name, "- you are about", 2026 - year)</code></pre>
+    <p class="tip">In the compiler, type your answers in the STDIN box (one per line) before clicking Run.</p>
+    <div class="btns"><button onclick="loadCode(this)">▶ Load in compiler</button><button class="alt" onclick="copyCode(this)">Copy</button></div>
+  </section>
+
+  <section id="l4">
+    <h2>4. Making Decisions (if / elif / else)</h2>
+    <p>Indentation (4 spaces) tells Python which lines belong inside the block.</p>
+    <pre><code>score = 85
+
+if score >= 90:
+    print("Excellent!")
+elif score >= 75:
+    print("Good job!")
+else:
+    print("Keep practicing")</code></pre>
+    <div class="btns"><button onclick="loadCode(this)">▶ Load in compiler</button><button class="alt" onclick="copyCode(this)">Copy</button></div>
+  </section>
+
+  <section id="l5">
+    <h2>5. Loops</h2>
+    <p>Use <code>for</code> to repeat a set number of times, and <code>while</code> to repeat until a condition is false.</p>
+    <pre><code>for i in range(1, 6):
+    print("Count:", i)
+
+n = 3
+while n > 0:
+    print("Countdown", n)
+    n -= 1</code></pre>
+    <div class="btns"><button onclick="loadCode(this)">▶ Load in compiler</button><button class="alt" onclick="copyCode(this)">Copy</button></div>
+  </section>
+
+  <section id="l6">
+    <h2>6. Functions</h2>
+    <p>A function is a reusable block of code. Define it with <code>def</code> and send back a result with <code>return</code>.</p>
+    <pre><code>def add(a, b):
+    return a + b
+
+def greet(name):
+    return "Hello, " + name + "!"
+
+print(add(5, 7))
+print(greet("Python"))</code></pre>
+    <div class="btns"><button onclick="loadCode(this)">▶ Load in compiler</button><button class="alt" onclick="copyCode(this)">Copy</button></div>
+  </section>
+
+  <section id="challenge">
+    <h2>🎯 Practice Challenge</h2>
+    <p>Write a program that asks for a number and prints whether it is <b>even</b> or <b>odd</b>. Hint: use <code>%</code> (remainder) with an <code>if</code> statement.</p>
+  </section>
+
+  <section id="compiler">
+    <h2>💻 Try It Yourself – Online Compiler</h2>
+    <p>Edit the code below and press <b>Run</b>. Use the “Load in compiler” buttons above to send any example here.</p>
+    <iframe id="compiler-frame"
+      src="https://onecompiler.com/embed/python?listenToEvents=true&hideNew=true&hideTitle=true&hideLanguageSelection=true"
+      title="Python online compiler" loading="lazy"></iframe>
+  </section>
+</main>
+
+<footer>Made with HTML, CSS &amp; JavaScript • Compiler by OneCompiler • Hosted on Netlify</footer>
+
+<script>
+function getCode(btn){
+  return btn.closest('section').querySelector('pre code').innerText;
+}
+function loadCode(btn){
+  var frame = document.getElementById('compiler-frame');
+  frame.contentWindow.postMessage({
+    eventType: 'populateCode',
+    language: 'python',
+    files: [{ name: 'main.py', content: getCode(btn) }]
+  }, '*');
+  document.getElementById('compiler').scrollIntoView({behavior:'smooth'});
+}
+function copyCode(btn){
+  navigator.clipboard.writeText(getCode(btn)).then(function(){
+    var old = btn.textContent; btn.textContent = 'Copied!';
+    setTimeout(function(){ btn.textContent = old; }, 1200);
+  });
+}
+</script>
+</body>
+</html>
